@@ -1,15 +1,33 @@
 body {
-	background: black;
+	background-color: #1d80c1;
+	background-image: linear-gradient(to bottom, #1d80c1, #2c9ed5);
 }
 
 html,
 body {
 	height: 100%;
+	display: grid;
 }
 
 #container {
+	margin: auto;
+	height: 70%;
 	width: 70%;
-	margin: 0 auto;
-	background-color: #afafaf;
-	height: 100%;
+	z-index: 3;
+	padding: 20px;
+
+	background-color: #1572b7;
+	color: #efefef;
+}
+
+.dados {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cdados {
+	display: flex;
+	columns: 1;
+	flex-flow: column;
+	align-items: center;
 }
