@@ -7,6 +7,9 @@ html,
 body {
 	height: 100%;
 	display: grid;
+	line-height: 120%;
+	font-family: Roboto, Arial, sans-serif;
+	font-size: 18px;
 }
 
 #container {
@@ -20,6 +23,10 @@ body {
 	color: #efefef;
 }
 
+h1 {
+	text-align: center;
+}
+
 .dados {
 	display: flex;
 	justify-content: space-between;
@@ -30,4 +37,14 @@ body {
 	columns: 1;
 	flex-flow: column;
 	align-items: center;
+}
+
+input {
+	border: 1px solid #024094;
+	border-radius: 3px;
+	background-color: #0000cc;
+	color: white;
+	font-weight: bold;
+	height: 25px;
+	font-size: 18px;
 }
