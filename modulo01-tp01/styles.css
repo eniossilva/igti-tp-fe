@@ -1,6 +1,7 @@
 body {
 	background-color: #1d80c1;
-	background-image: linear-gradient(to bottom, #1d80c1, #2c9ed5);
+	/* background-image: linear-gradient(to bottom, #1d80c1, #2c9ed5); */
+	background-image: linear-gradient(to bottom, #1d80c1, #ffffff);
 }
 
 html,
@@ -18,9 +19,15 @@ body {
 	width: 70%;
 	z-index: 3;
 	padding: 20px;
-
 	background-color: #1572b7;
 	color: #efefef;
+	border: 3px solid #1d80c1;
+}
+
+#simulacao,
+#resultado {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 h1 {
@@ -47,4 +54,5 @@ input {
 	font-weight: bold;
 	height: 25px;
 	font-size: 18px;
+	text-align: right;
 }
