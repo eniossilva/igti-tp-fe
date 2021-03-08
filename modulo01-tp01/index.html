@@ -8,43 +8,88 @@
 		<title>Simulação de financiamento</title>
 	</head>
 	<body>
-		<div id="container">
-			<div id="simulacao">
-				<h1>Simulação de Financiamento</h1>
+		<div class="container">
+			<form>
+				<div id="simulacao">
+					<h1>Simulação de Financiamento</h1>
+					<div class="dados">
+						<div class="cdados">
+							<label for="valor">Valor</label>
+							<input
+								type="text"
+								value="200000"
+								type="number"
+								name="valor"
+								id="valor"
+								required
+							/>
+						</div>
+						<div class="cdados">
+							<label for="prazo">Prazo (anos)</label>
+							<input
+								type="text"
+								value="20"
+								type="number"
+								name="prazo"
+								id="prazo"
+								required
+							/>
+						</div>
+						<div class="cdados">
+							<label for="juros">Juros ao ano</label>
+							<input
+								type="text"
+								value="0.08"
+								type="number"
+								name="juros"
+								id="juros"
+								required
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<a href="#" class="btsubmit">Simular</a>
+				</div>
+			</form>
+			<div id="resultado">
+				<h1>Resultado</h1>
 				<div class="dados">
 					<div class="cdados">
-						<label for="valor">Valor </label>
+						<label for="valor">Prazo (meses)</label>
 						<input
 							type="text"
-							value="200000"
+							value="240"
 							type="number"
 							name="valor"
 							id="valor"
+							disabled
 						/>
 					</div>
 					<div class="cdados">
-						<label for="prazo">Prazo </label>
+						<label for="prazo">Juros ao mês</label>
 						<input
 							type="text"
-							value="200000"
+							value="20"
 							type="number"
 							name="prazo"
 							id="prazo"
+							disabled
 						/>
 					</div>
 					<div class="cdados">
-						<label for="juros">Juros </label>
+						<label for="juros">Juros acumulados</label>
 						<input
 							type="text"
-							value="200000"
+							value="0.08"
 							type="number"
 							name="juros"
 							id="juros"
+							disabled
 						/>
 					</div>
 				</div>
 			</div>
-			<div id="resultado">Resultado</div>
 		</div>
 
 		<script src="script.js"></script>
