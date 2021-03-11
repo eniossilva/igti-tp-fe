@@ -19,170 +19,75 @@
 							<label for="valor">Valor</label>
 							<input
 								type="text"
-								value="200000"
 								type="number"
 								name="valor"
 								id="valor"
 								required
+								onchange="atualizar()"
 							/>
 						</div>
 						<div class="cdados">
-							<label for="prazo">Prazo (anos)</label>
+							<label for="prazo_anos">Prazo (anos)</label>
 							<input
 								type="text"
-								value="20"
 								type="number"
-								name="prazo"
-								id="prazo"
+								name="prazo_anos"
+								id="prazo_anos"
 								required
+								onchange="atualizar()"
 							/>
 						</div>
 						<div class="cdados">
-							<label for="juros">Juros ao ano</label>
+							<label for="juros_ano">Juros ao ano</label>
 							<input
 								type="text"
-								value="0.08"
 								type="number"
-								name="juros"
-								id="juros"
+								name="juros_ano"
+								id="juros_ano"
 								required
+								onchange="atualizar()"
 							/>
 						</div>
 					</div>
 				</div>
 				<div class="center">
-					<a href="#" class="btsubmit">Simular</a>
+					<a href="#" class="btsubmit" onclick="calcular()">Simular</a>
 				</div>
 			</form>
 			<div id="resultado">
 				<h1>Resultado</h1>
 				<div class="dados">
 					<div class="cdados">
-						<label for="valor">Prazo (meses)</label>
+						<label for="prazo_meses">Prazo (meses)</label>
 						<input
 							type="text"
-							value="240"
 							type="number"
-							name="valor"
-							id="valor"
+							name="prazo_meses"
+							id="prazo_meses"
 							disabled
 						/>
 					</div>
 					<div class="cdados">
-						<label for="prazo">Juros ao mês</label>
+						<label for="juros_mes">Juros ao mês</label>
 						<input
 							type="text"
-							value="20"
 							type="number"
-							name="prazo"
-							id="prazo"
+							name="juros_mes"
+							id="juros_mes"
 							disabled
 						/>
 					</div>
 					<div class="cdados">
-						<label for="juros">Juros acumulados</label>
+						<label for="juros_ac">Juros acumulados</label>
 						<input
 							type="text"
-							value="0.08"
 							type="number"
-							name="juros"
-							id="juros"
+							name="juros_ac"
+							id="juros_ac"
 							disabled
 						/>
 					</div>
 				</div>
-				<table class="parcelas">
-					<tr class="header">
-						<th class="helement">Prestação</th>
-						<th class="helement">Amortização</th>
-						<th class="helement">Juros</th>
-						<th class="helement">Total</th>
-					</tr>
-					<tr class="elements">
-						<td class="element">1</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">2</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">3</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">4</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">5</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">6</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">7</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">8</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">9</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">1</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">10</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">11</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">12</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-					<tr class="elements">
-						<td class="element">13</td>
-						<td class="element">800</td>
-						<td class="element">1200</td>
-						<td class="element">2000</td>
-					</tr>
-				</table>
 			</div>
 		</div>
 
