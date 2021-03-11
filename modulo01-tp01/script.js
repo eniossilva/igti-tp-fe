@@ -107,4 +107,55 @@ function calcular() {
 
 		prestacoes.push(pn);
 	}
+
+	gerarTabela();
 }
+
+function gerarTabela() {
+	let resultado = document.querySelector('#resultado');
+
+	let table = document.createElement('table');
+	table.classList.add('parcelas');
+	table.id = 'parcelas';
+
+	let heads = ['Prestação', 'Amortização', 'Juros', 'Total'];
+
+	generateTableHead(table, heads);
+
+	generateTable(table, prestacoes);
+
+	resultado.appendChild(table);
+}
+
+function generateTableHead(table, ths) {
+	let thead = table.createTHead();
+	let row = thead.insertRow();
+
+	for (let cth of ths) {
+		let th = document.createElement('th');
+		let text = document.createTextNode(cth);
+		th.appendChild(text);
+		row.appendChild(th);
+	}
+}
+
+function generateTable(table, data) {
+	for (let element of data) {
+		let row = table.insertRow();
+		addCell(row, element.prestacao);
+		addCell(row, element.amortizacao.toFixed(2));
+		addCell(row, element.juros.toFixed(2));
+		addCell(row, element.total_mes.toFixed(2));
+	}
+}
+
+function addCell(row, data) {
+	let cell = row.insertCell();
+	let text = document.createTextNode(data);
+	cell.appendChild(text);
+}
+
+// 	prestacao: 0,
+// 	amortizacao: 0.0,
+// 	juros: 0.0,
+// 	total_mes: 0.0,
