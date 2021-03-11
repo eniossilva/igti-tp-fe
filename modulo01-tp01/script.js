@@ -17,7 +17,6 @@ let p = {
 
 window.addEventListener('load', () => {
 	inicializar();
-	atualizar();
 	calcular();
 	preencher_juros_acumulado();
 });
@@ -42,8 +41,13 @@ function calcular_juros_mes(ja) {
 
 function atualizar() {
 	let element_valor = document.querySelector('#valor');
+	valor = element_valor.value;
+
 	let element_prazo_anos = document.querySelector('#prazo_anos');
+	prazo_anos = element_prazo_anos.value;
+
 	let element_juros_ano = document.querySelector('#juros_ano');
+	juros_ano = element_juros_ano.value;
 
 	let element_prazo_meses = document.querySelector('#prazo_meses');
 	prazo_meses = parseInt(element_prazo_anos.value) * 12;
@@ -66,25 +70,17 @@ function parseValor(valor) {
 }
 
 function calcular() {
-	// let valor = 200000;
-	// let prazo_anos = 20;
-	// let juros_ano = 0.08;
-	// let prazo_meses = 0;
-	// let juros_mes = 0;
-	// let juros_ac = 0;
-
-	// acumulado: 0.0,
+	atualizar();
 
 	valor_prestacao = valor / prazo_meses;
 
 	// atualizar amortizacao
-	p.amortizacao = parseValor(valor_prestacao);
+	p.amortizacao = valor_prestacao;
 
 	let valor_acumulado = 0.0;
 
 	for (let x = 0; x < prazo_meses; x++) {
 		prestacao_corrente = x + 1;
-		// console.log(x, valor, prazo_anos, juros_ano, prazo_meses, juros_mes);
 
 		// clonar objeto (desconsiderar referência)
 		let pn = Object.assign({}, p);
@@ -95,17 +91,19 @@ function calcular() {
 		// calcular juros
 		saldo_devedor = valor - (pn.prestacao - 1) * pn.amortizacao;
 		pn.juros = saldo_devedor * juros_mes;
-		pn.juros = parseValor(pn.juros);
+		pn.juros = pn.juros;
 
 		// calculo to total mes
 		pn.total_mes = pn.amortizacao + pn.juros;
-		pn.total_mes = parseValor(pn.total_mes);
+		pn.total_mes = pn.total_mes;
 
 		// calculo acumulado
 		valor_acumulado += pn.total_mes;
-		pn.acumulado = parseValor(valor_acumulado);
+		pn.acumulado = valor_acumulado;
 
-		console.log(prestacao_corrente, pn);
+		if (x < 10 || x > prazo_meses - 5) {
+			console.log(prestacao_corrente, pn);
+		}
 
 		prestacoes.push(pn);
 	}
